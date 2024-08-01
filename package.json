@@ -10,7 +10,8 @@
 	"dependencies": {
 		"discord.js": "^14.15.3",
 		"dotenv": "^16.4.5",
-		"telegraf": "^4.16.3"
+		"telegraf": "^4.16.3",
+		"googleapis": "^140.0.1"
 	},
 	"author": "",
 	"license": "ISC"

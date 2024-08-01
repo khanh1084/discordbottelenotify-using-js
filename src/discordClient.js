@@ -1,11 +1,11 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, Intents } = require('discord.js-selfbot-v13');
 const { DISCORD_TOKEN } = require('./config');
 
 const client = new Client({
 	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.MessageContent,
+		Intents.FLAGS.GUILDS,
+		Intents.FLAGS.GUILD_MESSAGES,
+		Intents.FLAGS.MESSAGE_CONTENT,
 	],
 });
 

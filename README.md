@@ -44,10 +44,9 @@ A bot that forwards messages from Discord to Telegram.
 ## Usage
 
 To start the bot, run the following command:
-
-    ```sh
-    npm start
-    ```
+```sh
+npm start
+```
 
 This will start the bot and it will begin forwarding messages from the specified Discord channels to the specified Telegram chat.
 

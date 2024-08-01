@@ -34,10 +34,11 @@ A bot that forwards messages from Discord to Telegram.
 2. Fill in the required environment variables in the `.env` file:
 
     ```env
-    DISCORD_TOKEN=your_discord_token_here
-    TELEGRAM_TOKEN=your_telegram_token_here
-    TELEGRAM_CHAT_ID=your_telegram_chat_id_here
-    DISCORD_CHANNEL_IDS=channel_id_1,channel_id_2,channel_id_3
+        DISCORD_TOKEN=your_discord_token_here
+        TELEGRAM_TOKEN=your_telegram_token_here
+        TELEGRAM_CHAT_ID=your_telegram_chat_id_here
+        GOOGLE_SHEET_ID=your_google_sheet_id_here
+        GOOGLE_SERVICE_ACCOUNT_FILE=path/to/your/service-account-file.json
     ```
 
 ## Usage

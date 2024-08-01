@@ -14,7 +14,7 @@ A bot that forwards messages from Discord to Telegram.
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/khanh1084/discordbottelenotify-using-js
+    git clone https://github.com/khanh1084/discordbottelenotify-using-js.git
     cd discordbottelenotify-using-js
     ```
 

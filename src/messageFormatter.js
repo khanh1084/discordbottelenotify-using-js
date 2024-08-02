@@ -25,7 +25,9 @@ function formatMessage(channelName, serverName, link, messages) {
 				.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
 				.replace(/<@(\d+)>/g, '@$1');
 			const timestamp = new Date(msg.timestamp).toLocaleString();
-			return `${escapeHtml(msg.user)} [${timestamp}]: \n\n${content}\n\n`;
+			return `${escapeHtml(
+				msg.user
+			)} [${timestamp}]: \n\n<b>${content}</b>\n\n`;
 		})
 		.join('\n');
 	return header + formattedMessages;

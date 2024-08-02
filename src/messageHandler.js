@@ -1,7 +1,7 @@
 const { TELEGRAM_CHAT_ID } = require('./config');
 const telegramBot = require('./telegramBot');
 
-const messageQueue = [];
+let messageQueue = [];
 let messageBuffer = [];
 
 async function sendTelegramMessages() {
@@ -9,7 +9,7 @@ async function sendTelegramMessages() {
 		await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for 1 second
 		if (messageQueue.length > 0) {
 			const combinedMessage = messageQueue.join('\n\n');
-			messageQueue.length = 0; // Clear the queue
+			messageQueue.length = 0;
 			try {
 				await telegramBot.telegram.sendMessage(
 					TELEGRAM_CHAT_ID,

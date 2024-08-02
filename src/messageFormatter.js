@@ -21,9 +21,11 @@ function formatMessage(channelName, serverName, link, messages) {
 	)} (<a href="${escapeHtml(link)}">link</a>)\n\n`;
 	const formattedMessages = messages
 		.map((msg) => {
-			const content = escapeHtml(msg.content).replace(/<@(\d+)>/g, '@$1');
+			const content = escapeHtml(msg.content)
+				.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+				.replace(/<@(\d+)>/g, '@$1');
 			const timestamp = new Date(msg.timestamp).toLocaleString();
-			return `${escapeHtml(msg.user)} [${timestamp}]: ${content}`;
+			return `${escapeHtml(msg.user)} [${timestamp}]: \n\n${content}\n\n`;
 		})
 		.join('\n');
 	return header + formattedMessages;

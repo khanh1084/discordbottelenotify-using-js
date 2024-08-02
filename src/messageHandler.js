@@ -14,7 +14,7 @@ async function sendTelegramMessages() {
 				await telegramBot.telegram.sendMessage(
 					TELEGRAM_CHAT_ID,
 					combinedMessage,
-					{ parse_mode: 'HTML' } // Enable HTML parsing
+					{ parse_mode: 'HTML', disable_web_page_preview: true }
 				);
 			} catch (e) {
 				console.error(`Error sending message: ${e}`);

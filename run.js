@@ -16,15 +16,17 @@ client.on('messageCreate', async (message) => {
 	if (message.createdTimestamp < botStartTime) {
 		return;
 	}
-	const channelName = message.channel.name;
-	const serverName = message.guild.name;
-	const link = `https://discord.com/channels/${message.guild.id}/${message.channel.id}`;
-	const formattedMessage = formatMessage(channelName, serverName, link, [
-		{
-			user: message.author.username,
-			content: message.content,
-			timestamp: message.createdTimestamp,
-		},
-	]);
-	messageQueue.push(formattedMessage);
+	if (DISCORD_CHANNEL_IDS.includes(message.channel.id)) {
+		const channelName = message.channel.name;
+		const serverName = message.guild.name;
+		const link = `https://discord.com/channels/${message.guild.id}/${message.channel.id}`;
+		const formattedMessage = formatMessage(channelName, serverName, link, [
+			{
+				user: message.author.username,
+				content: message.content,
+				timestamp: message.createdTimestamp,
+			},
+		]);
+		messageQueue.push(formattedMessage);
+	}
 });
